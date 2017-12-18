@@ -115,9 +115,19 @@ img {
 #accio-button {
   border: 3px solid #fcec5a;
 }
+#accio-button:hover {
+  background: #fcec5a;
+  border: 3px solid #ffffff;
+}
 
 #sorting-button {
   background-color: #fcec5a;
+  border: 3px solid #fcec5a;
+}
+
+#sorting-button:hover {
+  background-color: #ffffff;
+  border: 3px solid #fcec5a;
 }
 
 #right-text {

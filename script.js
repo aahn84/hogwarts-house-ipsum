@@ -36,10 +36,6 @@
       return;
     }
 
-    if(secondInput === 'three') {
-      ipsumText.css({"font-family":"LumosLatino", "Fallback":"sans-serif", "text-align":"center", "font-size":"1em",});
-    }
-
     if (firstInput === 'gryffindor') {
       houseName.text('Gryffindor');
       houseCrest.attr("src", 'images/0.31_Gryffindor_Crest_Transparent.png');
@@ -57,26 +53,27 @@
       houseCrest.attr("src", 'images/0.61_Slytherin_Crest_Transparent.png');
     }
 
-    if (secondInput === 'one') {
+    if (secondInput === '1') {
+      console.log(secondInput)
       ipsumText.css({"font-family":"LumosLatino", "Fallback":"sans-serif", "text-align":"center",});
       ipsumText.text("Sentence");
+      // ipsumText.text(random_sentence);
       sortingButton.text('SPIN TIME-TURNER');
       // return random_sentence();
     }
-    if (secondInput === 'two') {
+    if (secondInput === '2') {
       ipsumText.css({"font-family":"LumosLatino", "Fallback":"sans-serif", "text-align":"center",});
       ipsumText.text("SentenceSentence");
       sortingButton.text('SPIN TIME-TURNER');
       // return random_sentence();
     }
-    if (secondInput === 'three') {
+    if (secondInput === '3') {
       ipsumText.css({"font-family":"LumosLatino", "Fallback":"sans-serif", "text-align":"center", "font-size":"1em",});
       ipsumText.text("SentenceSentenceSentence");
       sortingButton.text('SPIN TIME-TURNER');
       // return random_sentence();
     }
   });
-
 
   //if sorting button pressed, cycle display house name&crest
   //append # of Sentences to paragraph
@@ -127,7 +124,7 @@
     // return firstInput[Math.floor(Math.random() * firstInput.length)];
   }
 
-  function random_sentence(random_word) {
+  let random_sentence = function(random_word) {
     let buildSentence = [];
     let randomLength = Math.floor(Math.random() * (11 - 1) + 1);
 
