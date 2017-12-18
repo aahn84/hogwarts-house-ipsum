@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Harry Potter House Ipsum</title>
+    <link rel="icon" href="images/favicon-bolt.ico" type="image/icon"/>
+
+    <!-- Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- jQuery Slim -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- My Styles -->
+    <link rel="stylesheet" href="style.css">
+      </head>
+
+  <body>
+
+    <header>
+      <h1>Hogvarts House Ipsum</h1>
+    </header>
+
+    <div class="container-fluid">
+
+      <div class="row" id="main">
+        <!-- Left column House Crest -->
+        <div class="col-lg-4" id="left-crest">
+            <h2 class="house-name"></h2>
+            <img src="images/hogwarts_house_crests.png" alt="Hogwarts Houses Crest" class="house-crest">
+            <!-- <img src="https://www.shareicon.net/data/256x256/2015/11/04/151672_home_256x256.png" alt="Hogwarts Houses Crest"> -->
+        </div>
+
+        <!-- Middle column with Dropdowns -->
+        <div class="col-lg-4" id="middle">
+
+          <div class="row" id="mid-top">
+            <div class="col-lg-6" id="select-house">
+              <!-- dropdown house here -->
+              <label for="sort-house">+<span class="big">5 P</span>oints <span class="big">T</span>o...</label>
+                <select class="form-control" name="sort-house" id="sort-house">
+                  <option value="">--</option>
+                  <option value="gryffindor">Gryffindor</option>
+                  <option value="hufflepuff">Hufflepuff</option>
+                  <option value="ravenclaw">Ravenclaw</option>
+                  <option value="slytherin">Slytherin</option>
+                </select>
+            </div>
+            <div class="col-lg-6" id="select-length">
+              <!-- dropdowns paragraphs here -->
+              <label for="choose-length"><span class="big">C</span>onjure <span class="big">S</span>pell</label>
+                <select class="form-control" name="choose-length" id="select-length">
+                  <option value="">--</option>
+                  <option value="one-p">1 Sentence</option>
+                  <option value="two-p">2 Sentences</option>
+                  <option value="three-p">3 Sentences</option>
+                </select>
+            </div>
+          </div>
+
+          <div class="row" id="mid-bottom">
+            <button type="button" class="btn" id="accio-button">ACCIO HOUSE IPSUM!</button>
+          </div>
+
+        </div>
+
+        <!-- Right column Ipsum Generated -->
+        <div class="col-lg-4" id="right-text">
+            <div class="row" id="right-top">
+              <p class="ipsum-generated">Welcome to Hogwarts School of Witchcraft and Wizardry. Use the dropdowns to summon a spell and pass your O.W.L.s
+              </p>
+
+              <br>
+              <p class="get-sorted">Don't know which house you belong to? Let the Sorting Hat decide.
+              </p>
+              <!-- <br>
+              <p class="ipsum-generated">Welcome to Hogwarts School of Witchcraft and Wizardry, located in Hogwarts Castle between Black Lake and the Forbidden Forest. Summon your spell to pass your O.W.L.s</p> -->
+              <!-- <br>
+              <p class="ipsum-generated">Welcome to Hogwarts School of Witchcraft and Wizardry, located in Hogwarts Castle between Black Lake and the Forbidden Forest. Summon your spell to pass your O.W.L.s</p> -->
+            </div>
+
+            <div class="row" class="right-bottom">
+              <button type="button" class="btn" id="sorting-button">GET SORTED</button>
+            </div>
+
+      </div>
+
+      <div class="row" id="footer">
+        <footer>
+          <p>Copyright &copy; 2017 Angela Ahn</p>
+        </footer>
+      </div>
+
+    </div>
+
+    <!-- My JS -->
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>

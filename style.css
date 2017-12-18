@@ -1,0 +1,151 @@
+@font-face {
+  font-family: 'LumosLatino';
+  src: url('fonts/LumosLatino.eot'); /* IE9 Compat Modes */
+  src: url('fonts/LumosLatino.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/LumosLatino.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/LumosLatino.woff') format('woff'), /* Pretty Modern Browsers */
+       url('fonts/LumosLatino.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fonts/LumosLatino.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'HARRP___';
+  src: url('fonts/HARRP___.eot'); /* IE9 Compat Modes */
+  src: url('fonts/HARRP___.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/HARRP___.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/HARRP___.woff') format('woff'), /* Pretty Modern Browsers */
+       url('fonts/HARRP___.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fonts/HARRP___.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  cursor: url('images/lightning cursor.png'), auto;
+  font-family: 'LumosLatino';
+  Fallback: sans-serif;
+  color: #ffffff;
+  text-align: center;
+  /* background-image: url('images/hogwarts wallpaper.jpg'); */
+  /* background-image: url('http://wallpaper.pickywallpapers.com/2560x1440/minimalistic-harry-potter.jpg'); */
+  background-image: url('images/minimalistic-harry-potter.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+h1 {
+  display: block;
+  font-family: 'LumosLatino';
+  Fallback: sans-serif;
+  color: #ffffff;
+  font-size: 3.5em;
+  margin: 0.5em;
+}
+
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+}
+
+#main {
+  display: flex;
+  flex-direction: row;
+  padding: 1.5em;
+}
+
+.col-lg-4 {
+  width: 33.33%;
+  float: left;
+}
+
+#left-crest {
+  /* border: 5px outset #fcec5a; */
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+img {
+  width: 80%;
+}
+
+#middle {
+  /* border: 5px outset #fcec5a; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* margin: 1em auto; */
+  padding: 1em;
+  /* height: 60vh; */
+}
+
+#mid-top {
+  color: #fcec5a;
+  /* color: #a3a7a1; */
+  /* color: #666666; */
+}
+
+.big {
+  font-size: 1.5em;
+  /* color: #fcec5a; */
+}
+
+.form-control {
+  font-family: Tahoma;
+}
+
+.btn {
+  font-family: 'LumosLatino';
+  Fallback: sans-serif;
+  /* color: #a3a7a1; */
+  margin: 0 auto 3em auto;
+}
+
+#accio-button {
+  border: 3px solid #fcec5a;
+}
+
+#sorting-button {
+  background-color: #fcec5a;
+}
+
+#right-text {
+  /* border: 5px outset #fcec5a; */
+  display: flex;
+  flex-direction: column;
+  font-family: 'HARRP___';
+  Fallback: sans-serif;
+  font-size: 1.5em;
+  padding: 2em;
+  align-items: center;
+  justify-content: center;
+}
+
+#footer {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  padding: 1.5em;
+  text-align: center;
+  margin-top: 1em;
+  width: 100vw;
+}
+
+footer > p {
+  font-family: Tahoma;
+  color: #000000;
+  /* color: #a3a7a1; */
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
