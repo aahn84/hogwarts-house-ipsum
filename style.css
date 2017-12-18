@@ -132,6 +132,12 @@ img {
   justify-content: center;
 }
 
+#right-top {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
 #footer {
   display: block;
   position: absolute;

@@ -1,81 +1,80 @@
-$(document).ready(function() {
-  console.log("READY!")
+// $(document).ready(function() {
   var accioButton = $('#accio-button');
   var sortHouse = $('#sort-house');
-  var selectLength = $('#select-length');
-  var firstInput = sortHouse.val;
-  var secondInput = selectLength.val;
+  var selectLength = $('#choose-length');
   var houseName = $('.house-name');
   var houseCrest = $('.house-crest');
   var ipsumText = $('.ipsum-generated');
   var sortingText = $('.get-sorted');
-  var sortingButton = $('.sorting-button');
+  var sortingButton = $('#sorting-button');
 
   var reset = function() {
-    sortingButton.text("GET SORTED");
-    houseName.text("The Great Houses");
+    houseName.text("");
     houseCrest.attr("src", 'images/hogwarts_house_crests.png');
     ipsumText.text("Welcome to Hogwarts School of Witchcraft and Wizardry. Use the dropdowns to summon a spell and pass your O.W.L.s");
-    sortingText.text("Don't know which house you belong to? Let the Sorting Hat decide.");
+    ipsumText.css({"font-family":"HARRP___", "Fallback":"sans-serif", "text-align":"center", "font-size":"1.5em",});
+    sortingText.text("Don't know which house you belong in? Let the Sorting Hat decide.");
+    sortingButton.text("GET SORTED");
   };
 
 //apply both dropdown changes at once -or- get sorted by hat
 //display selection when accio button clicked
-
   accioButton.click(function() {
-    firstInput = $('#sort-house').val()
-console.log('hi')
-console.log('first input', firstInput)
-      if (firstInput === '--') {
-        console.log('nothing here')
-        houseCrest.attr("src", 'images/hogwarts_house_crests.png');
-        ipsumText.text = "Welcome to Hogwarts School of Witchcraft and Wizardry. Use the dropdowns to summon a spell and pass your O.W.L.s";
-        sortingText.text = "Don't know which house you belong to? Let the Sorting Hat decide.";
-      }
-      if (firstInput === 'Gryffindor') {
-        console.log('Gryffindor');
-        $('.house-name').text('HIYEE');
-        // houseName.text('Gryffindor');
-        houseCrest.attr("src", 'images/0.31_Gryffindor_Crest_Transparent.png');
-        sortingButton.text("SPIN TIME-TURNER");
-      }
-      if (firstInput === 'Hufflepuff') {
-        houseName.text('Hufflepuff');
-        houseCrest.attr("src", 'images/0.51_Hufflepuff_Crest_Transparent.png');
-        sortingButton.text("SPIN TIME-TURNER");
-      }
-      if (firstInput === 'Ravenclaw') {
-        houseName.text('Ravenclaw');
-        houseCrest.attr("src", 'images/0.41_Ravenclaw_Crest_Transparent.png');
-        sortingButton.text("SPIN TIME-TURNER");
-      }
-      if (firstInput === 'Slytherin') {
-        houseName.text('Slytherin');
-        houseCrest.attr("src", 'images/0.61_Slytherin_Crest_Transparent.png');
-        sortingButton.text("SPIN TIME-TURNER");
-      }
+    let firstInput = sortHouse.val();
+    let secondInput = selectLength.val();
 
-        if (secondInput === '--') {
-          houseCrest.attr("src", 'images/hogwarts_house_crests.png');
-          ipsumText.text("Welcome to Hogwarts School of Witchcraft and Wizardry, located in Hogwarts Castle between Black Lake and the Forbidden Forest. Summon your spell to pass your O.W.L.s");
-          sortingText.text("Welcome to Hogwarts School of Witchcraft and Wizardry, located in Hogwarts Castle between Black Lake and the Forbidden Forest. Summon your spell to pass your O.W.L.s");
-        }
-        if (secondInput === '1 Sentence') {
-          // ipsumText.scss({"font-family":"LumosLatino", "Fallback":"sans-serif",});
-          ipsumText.text("Sentence");
-        }
-        if (secondInput === '2 Sentences') {
-          ipsumText.css({"font-family":"LumosLatino", "Fallback":"sans-serif",});
-          ipsumText.text("SentenceSentence");
-        }
-        if (secondInput === '3 Sentences') {
-          ipsumText.css({"font-family":"LumosLatino", "Fallback":"sans-serif", "font-size":"1.5em",});
-          ipsumText.text("SentenceSentenceSentence");
-        }
-        //if 'Get Sorted' is clicked, toggle text to 'Spin Time-Turner' and reset elements
-        // setTimeout function(reset, cb) {
-        //   cb(reset);
-        // };
+    if (firstInput === '' && secondInput === '') {
+      alert('Conjure a spell using the dropdown menus.');
+      return;
+    }
+    if (firstInput === '' && secondInput !=='') {
+      alert('Sort into a Hogwarts House to summon your spell.')
+      return;
+    }
+    if (firstInput !== '' && secondInput === '') {
+      alert('Conjure a length to summon your spell.')
+      return;
+    }
+
+    if(secondInput === 'three') {
+      ipsumText.css({"font-family":"LumosLatino", "Fallback":"sans-serif", "text-align":"center", "font-size":"1em",});
+    }
+
+    if (firstInput === 'gryffindor') {
+      houseName.text('Gryffindor');
+      houseCrest.attr("src", 'images/0.31_Gryffindor_Crest_Transparent.png');
+    }
+    if (firstInput === 'hufflepuff') {
+      houseName.text('Hufflepuff');
+      houseCrest.attr("src", 'images/0.51_Hufflepuff_Crest_Transparent.png');
+    }
+    if (firstInput === 'ravenclaw') {
+      houseName.text('Ravenclav');
+      houseCrest.attr("src", 'images/0.41_Ravenclaw_Crest_Transparent.png');
+    }
+    if (firstInput === 'slytherin') {
+      houseName.text('Slytherin');
+      houseCrest.attr("src", 'images/0.61_Slytherin_Crest_Transparent.png');
+    }
+
+    if (secondInput === 'one') {
+      ipsumText.css({"font-family":"LumosLatino", "Fallback":"sans-serif", "text-align":"center",});
+      ipsumText.text("Sentence");
+      sortingButton.text('SPIN TIME-TURNER');
+      // return random_sentence();
+    }
+    if (secondInput === 'two') {
+      ipsumText.css({"font-family":"LumosLatino", "Fallback":"sans-serif", "text-align":"center",});
+      ipsumText.text("SentenceSentence");
+      sortingButton.text('SPIN TIME-TURNER');
+      // return random_sentence();
+    }
+    if (secondInput === 'three') {
+      ipsumText.css({"font-family":"LumosLatino", "Fallback":"sans-serif", "text-align":"center", "font-size":"1em",});
+      ipsumText.text("SentenceSentenceSentence");
+      sortingButton.text('SPIN TIME-TURNER');
+      // return random_sentence();
+    }
   });
 
 
@@ -84,150 +83,61 @@ console.log('first input', firstInput)
     //append <br> + Paragraph
   //if Get Sorted clicked, toggle text to 'Spin Time-Turner' and reset elements
 
+
+  sortingButton.click(function() {
+    if (sortingButton.text() === "SPIN TIME-TURNER") {
+      return location.reload();
+    }
+
+    // if (sortingButton.text() === "GET SORTED") {
+    //   sortingButton.text("SPIN TIME-TURNER");
     //
-    // sortingButton.click(function() {
-    //   if (sortingButton.text === "GET SORTED") {
-    //     sortingButton.text("SPIN TIME-TURNER");
-    //
+    //   setTimeout(function() {
+    //     //cycle through house names
     //     setTimeout(function() {
-    //       //cycle through house names
-    //       setTimeout(function() {
-    //         //cycle through house crests
-    //       })
+    //       //cycle through house crests
     //     })
-    //     //display randomized house name/crest
-    //   }
-    //
-    //   if (sortingButton.text === "SPIN TIME-TURNER") {
-    //     sortingButton.text("GET SORTED");
-    //
-    //     setTimeout(function() {
-    //       //cycle through house names
-    //       setTimeout(function() {
-    //         //cycle through house crests
-    //       })
-    //     })
-    //     //display randomized house name/crest
-    //   }
-    // });
+    //   })
+    //   //display randomized house name/crest
+    // }
+  });
 
+  //RANDOMIZERS
+  //randomize words to create sentence
+  //randomize word count per sentence
+  //capitalize first letter of each sentence
 
-//RANDOMIZERS
-//randomize words to create sentence
-//randomize word count per sentence
-//capitalize first letter of each sentence
+  //randomize words to create sentence
+  let random_word = function() {
+    let firstInput = $('#sort-house').val()
+    let secondInput = $('#choose-length').val()
 
-//randomize words to create sentence
-  // const random_word = function() {
-  //   var buildSentence = [];
-  //
-  //   if (firstInput.text === "Gryffindor") {
-  //     gryffindor[Math.floor(Math.random() * gryffindor.length)];
-  //   }
-  //   if (firstInput.text === "Hufflepuff") {
-  //     hufflepuff[Math.floor(Math.random() * hufflepuff.length)];
-  //   }
-  //   if (firstInput.text === "Ravenclaw") {
-  //     ravenclaw[Math.floor(Math.random() * ravenclaw.length)];
-  //   }
-  //   if (firstInput.text === "Slytherin") {
-  //     slytherin[Math.floor(Math.random() * slytherin.length)];
-  //   }
-  //   return random_word;
-  // }
-  //
-  // function buildSentence(random_word) {
-  //     let buildSentence = [];
-  //     let randomLength = Math.floor(Math.random() * (11 - 1) + 1);
-  //     // var firstInput = sortHouse.value;
-  //     // var secondInput = selectLength.value;
-  //
-  //     while (buildSentence.length <= randomLength) {
-  //       buildSentence.push(random_word);
-  //       buildSentence.join(" ");
-  //       buildSentence[0].toUppercase;
-  //     }
-  //     return buildSentence + ".";
-  // }
+    if (firstInput === "gryffindor") {
+      return gryffindor[Math.floor(Math.random() * gryffindor.length)];
+    }
+    if (firstInput.text === "hufflepuff") {
+      return hufflepuff[Math.floor(Math.random() * hufflepuff.length)];
+    }
+    if (firstInput.text === "ravenclaw") {
+      return ravenclaw[Math.floor(Math.random() * ravenclaw.length)];
+    }
+    if (firstInput.text === "slytherin") {
+      return slytherin[Math.floor(Math.random() * slytherin.length)];
+    }
+    // return firstInput[Math.floor(Math.random() * firstInput.length)];
+  }
 
-  const gryffindor = [
-    'Godric Gryffindor',
-    'bravery',
-    'daring',
-    'nerve',
-    'chivalry',
-    'determination',
-    'lion',
-    'scarlet and gold',
-    'Minerva McGonagall',
-    'The Fat Lady',
-    'Nearly Headless Nick',
-    'fire',
-    'Albus Dumbledore',
-    'Sirius Black',
-    'Harry Potter',
-    'Hermione Granger',
-    'Sword of Gryffindor',
-  ];
+  function random_sentence(random_word) {
+    let buildSentence = [];
+    let randomLength = Math.floor(Math.random() * (11 - 1) + 1);
 
-  const hufflepuff = [
-    'Helga Hufflepuff',
-    'hard-working',
-    'dedication',
-    'patience',
-    'loyalty',
-    'fair play',
-    'friendly',
-    'honest',
-    'impartial',
-    'badger',
-    'yellow and black',
-    'Pomona Sprout',
-    'The Fat Friar',
-    'earth',
-    'Newt Scamander',
-    'Cedric Diggory',
-  ];
+    while (buildSentence.length <= randomLength) {
+      buildSentence.push(random_word);
+    }
+    buildSentence.join(" ");
+    // buildSentence[0].toUppercase();
+    return buildSentence + ".";
+  }
 
-  const ravenclaw = [
-    'Rowena Ravenclaw',
-    'intelligence',
-    'knowledge',
-    'wit',
-    'learning',
-    'wisdom',
-    'intellect',
-    'eagle',
-    'blue and bronze',
-    'Filius Flitwick',
-    'The Grey Lady',
-    'air',
-    'Gilderoy Lockhart',
-    'Luna Lovegood',
-    'Cho Chang',
-    'pure-blood',
-  ];
-
-  const slytherin = [
-    'Salazar Slytherin',
-    'ambition',
-    'cunning',
-    'resourcefulness',
-    'shrewd',
-    'clever',
-    'serpent',
-    'snake',
-    'green and silver',
-    'Horace Slughorn',
-    'Severus Snape',
-    'The Bloody Baron',
-    'water',
-    'Draco Malfoy',
-    'Crabbe',
-    'Goyle',
-    'Tom Riddle',
-    'Voldemort',
-    'He Who Must Not Be Named',
-  ];
 //End DOMContentLoaded
-});
+// });
