@@ -8,20 +8,40 @@
   var sortingText = $('.get-sorted');
   var sortingButton = $('#sorting-button');
 
-  var reset = function() {
-    houseName.text("");
-    houseCrest.attr("src", 'images/hogwarts_house_crests.png');
-    ipsumText.text("Welcome to Hogwarts School of Witchcraft and Wizardry. Use the dropdowns to summon a spell and pass your O.W.L.s");
-    ipsumText.css({"font-family":"HARRP___", "Fallback":"sans-serif", "text-align":"center", "font-size":"1.5em",});
-    sortingText.text("Don't know which house you belong in? Let the Sorting Hat decide.");
-    sortingButton.text("GET SORTED");
-  };
 
-//apply both dropdown changes at once -or- get sorted by hat
-//display selection when accio button clicked
+//display house name and crest on change
+  sortHouse.change(function() {
+  let firstInput = sortHouse.val();
+
+    if (firstInput === '') {
+      houseName.text('');
+      houseCrest.attr({"src":'images/hogwarts_house_crests.png', "alt":"Hogwarts Houses Crest", "class":"house-crest"});
+    }
+    if (firstInput === 'gryffindor') {
+      houseName.text('Gryffindor');
+      houseCrest.attr("src", 'images/0.31_Gryffindor_Crest_Transparent.png');
+    }
+    if (firstInput === 'hufflepuff') {
+      houseName.text('Hufflepuff');
+      houseCrest.attr("src", 'images/0.51_Hufflepuff_Crest_Transparent.png');
+    }
+    if (firstInput === 'ravenclaw') {
+      houseName.text('Ravenclaw');
+      houseCrest.attr("src", 'images/0.41_Ravenclaw_Crest_Transparent.png');
+    }
+    if (firstInput === 'slytherin') {
+      houseName.text('Slytherin');
+      houseCrest.attr("src", 'images/0.61_Slytherin_Crest_Transparent.png');
+    }
+  });
+
+//display selections from the two dropdowns
   accioButton.click(function() {
     let firstInput = sortHouse.val();
     let secondInput = selectLength.val();
+    let inputNum = parseInt(secondInput);
+    let wordArray;
+
 
     if (firstInput === '' && secondInput === '') {
       alert('Conjure a spell using the dropdown menus.');
@@ -37,103 +57,107 @@
     }
 
     if (firstInput === 'gryffindor') {
-      houseName.text('Gryffindor');
-      houseCrest.attr("src", 'images/0.31_Gryffindor_Crest_Transparent.png');
+      wordArray = gryffindor;
     }
     if (firstInput === 'hufflepuff') {
-      houseName.text('Hufflepuff');
-      houseCrest.attr("src", 'images/0.51_Hufflepuff_Crest_Transparent.png');
+      wordArray = hufflepuff;
     }
     if (firstInput === 'ravenclaw') {
-      houseName.text('Ravenclav');
-      houseCrest.attr("src", 'images/0.41_Ravenclaw_Crest_Transparent.png');
+      wordArray = ravenclaw;
     }
     if (firstInput === 'slytherin') {
-      houseName.text('Slytherin');
-      houseCrest.attr("src", 'images/0.61_Slytherin_Crest_Transparent.png');
+      wordArray = slytherin;
     }
 
-    if (secondInput === '1') {
-      console.log(secondInput)
-      ipsumText.css({"font-family":"LumosLatino", "Fallback":"sans-serif", "text-align":"center",});
-      ipsumText.text("Sentence");
-      // ipsumText.text(random_sentence);
-      sortingButton.text('SPIN TIME-TURNER');
-      // return random_sentence();
-    }
-    if (secondInput === '2') {
-      ipsumText.css({"font-family":"LumosLatino", "Fallback":"sans-serif", "text-align":"center",});
-      ipsumText.text("SentenceSentence");
-      sortingButton.text('SPIN TIME-TURNER');
-      // return random_sentence();
-    }
-    if (secondInput === '3') {
-      ipsumText.css({"font-family":"LumosLatino", "Fallback":"sans-serif", "text-align":"center", "font-size":"1em",});
-      ipsumText.text("SentenceSentenceSentence");
-      sortingButton.text('SPIN TIME-TURNER');
-      // return random_sentence();
-    }
+    $('.your-spell').text("Your Spell:")
+    ipsumText.css({"font-family":"MyLumos", "Fallback":"sans-serif", "font-size":"1em",});
+    ipsumText.text(random_sentence(inputNum, wordArray));
+    sortingButton.text('SPIN TIME-TURNER');
   });
 
-  //if sorting button pressed, cycle display house name&crest
-  //append # of Sentences to paragraph
-    //append <br> + Paragraph
-  //if Get Sorted clicked, toggle text to 'Spin Time-Turner' and reset elements
-
-
+//append # of Sentences to paragraph
   sortingButton.click(function() {
     if (sortingButton.text() === "SPIN TIME-TURNER") {
       return location.reload();
     }
 
-    // if (sortingButton.text() === "GET SORTED") {
-    //   sortingButton.text("SPIN TIME-TURNER");
+    if (sortingButton.text() === "GET SORTED") {
+      sortingButton.text("SPIN TIME-TURNER");
+      //cycle through house names
+      let count = 0;
+      let intervalId = setInterval(function() {
+          let randomIndex = Math.floor(Math.random() * 4);
+          houseCrest.attr("src", crestImgs[randomIndex]);
+          let house = houseNames[randomIndex];
+          houseName.text(house);
+          sortHouse.val(house.toLowerCase());
+          count++;
+          console.log(count, house)
+
+          if (count >= 20) {
+            clearInterval(intervalId);
+          }
+      }, 150);
+    }
+
+    // setTimeout(function() {
+    //   console.log('hi')
+    //   let count1 = 0;
+    //   let count2 = 0;
+    //   let houses = houseNames;
+    //   let imgs = crestImgs;
+    //   // console.log(houses)
+    //   // console.log(imgs)
     //
-    //   setTimeout(function() {
-    //     //cycle through house names
-    //     setTimeout(function() {
-    //       //cycle through house crests
-    //     })
-    //   })
-    //   //display randomized house name/crest
-    // }
+    //   houseCrest.attr("src", imgs[j]);
+    //   house = houses[i];
+    //   houseName.text(house);
+    //   sortHouse.val(house)
+
+      // for (var i = 0; i < houses.length; i++) {
+      //   while (count1 <= 3) {
+      //     house = houses[i];
+      //     console.log(house)
+      //     houseName.text(house);
+      //     count1++;
+      //   }
+      // }
+      // //cycle through house crests
+      // setTimeout(function() {
+      //   for (var j = 0; j < imgs.length; j++) {
+      //     while (count2 <= 3) {
+      //       img = imgs[j];
+      //       console.log(img)
+      //       houseCrest.attr("src", img);
+      //       count2++;
+      //       }
+      //     }
+      //   });
+      // });
+
+    // randomIndex = Math.floor(Math.random() * (4 - 1));
+    // houseName.text(houses[randomIndex]);
+    // houseCrest.attr("src", imgs[randomIndex]);
+    // return;
   });
 
-  //RANDOMIZERS
-  //randomize words to create sentence
-  //randomize word count per sentence
-  //capitalize first letter of each sentence
-
-  //randomize words to create sentence
-  let random_word = function() {
-    let firstInput = $('#sort-house').val()
-    let secondInput = $('#choose-length').val()
-
-    if (firstInput === "gryffindor") {
-      return gryffindor[Math.floor(Math.random() * gryffindor.length)];
-    }
-    if (firstInput.text === "hufflepuff") {
-      return hufflepuff[Math.floor(Math.random() * hufflepuff.length)];
-    }
-    if (firstInput.text === "ravenclaw") {
-      return ravenclaw[Math.floor(Math.random() * ravenclaw.length)];
-    }
-    if (firstInput.text === "slytherin") {
-      return slytherin[Math.floor(Math.random() * slytherin.length)];
-    }
-    // return firstInput[Math.floor(Math.random() * firstInput.length)];
+//randomize words to create sentence
+  let random_word = function(wordArray) {
+    // console.log('random word', wordArray);
+    return wordArray[Math.floor(Math.random() * wordArray.length)];
   }
 
-  let random_sentence = function(random_word) {
+//create random sentence using random words
+  let random_sentence = function(inputNum, wordArray) {
     let buildSentence = [];
     let randomLength = Math.floor(Math.random() * (11 - 1) + 1);
 
     while (buildSentence.length <= randomLength) {
-      buildSentence.push(random_word);
+      buildSentence.push(random_word(wordArray));
     }
-    buildSentence.join(" ");
-    // buildSentence[0].toUppercase();
-    return buildSentence + ".";
+    firstLetter = buildSentence[0][0];
+    str = buildSentence.join(" ");
+    return (str[0].toUpperCase() + str.substring(1) + ".");
   }
 
 //End DOMContentLoaded

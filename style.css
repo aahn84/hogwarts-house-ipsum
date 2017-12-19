@@ -1,21 +1,16 @@
-@font-face {
+/* @font-face {
   font-family: 'LumosLatino';
-  src: url('fonts/LumosLatino.eot'); /* IE9 Compat Modes */
-  src: url('fonts/LumosLatino.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('fonts/LumosLatino.woff2') format('woff2'), /* Super Modern Browsers */
-       url('fonts/LumosLatino.woff') format('woff'), /* Pretty Modern Browsers */
-       url('fonts/LumosLatino.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('fonts/LumosLatino.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('fonts/LumosLatino.ttf') format('truetype');
+} */
+
+@font-face {
+  font-family: 'MyLumos';
+  src: url('fonts/MyFontRegular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'HARRP___';
-  src: url('fonts/HARRP___.eot'); /* IE9 Compat Modes */
-  src: url('fonts/HARRP___.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('fonts/HARRP___.woff2') format('woff2'), /* Super Modern Browsers */
-       url('fonts/HARRP___.woff') format('woff'), /* Pretty Modern Browsers */
-       url('fonts/HARRP___.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('fonts/HARRP___.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('fonts/HARRP___.ttf') format('truetype');
 }
 
 * {
@@ -25,22 +20,30 @@
 body {
   display: flex;
   flex-direction: column;
-  cursor: url('images/lightning cursor.png'), auto;
-  font-family: 'LumosLatino';
+  font-family: 'MyLumos';
   Fallback: sans-serif;
   color: #ffffff;
   text-align: center;
-  /* background-image: url('images/hogwarts wallpaper.jpg'); */
+  /* cursor: url('images/lightning cursor.png'), auto; */
+  background-image: url('images/hogwarts wallpaper.jpg');
   /* background-image: url('http://wallpaper.pickywallpapers.com/2560x1440/minimalistic-harry-potter.jpg'); */
-  background-image: url('images/minimalistic-harry-potter.jpg');
+  /* background-image: url('images/minimalistic-harry-potter.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  min-width: 100%;
+}
+
+.container-fluid {
+  min-height: 100%;
+  position: relative;
 }
 
 h1 {
   display: block;
-  font-family: 'LumosLatino';
+  font-family: 'MyLumos';
   Fallback: sans-serif;
   color: #ffffff;
   font-size: 3.5em;
@@ -50,6 +53,7 @@ h1 {
 .container-fluid {
   display: flex;
   flex-direction: column;
+  flex: 1 0 auto;
 }
 
 #main {
@@ -58,42 +62,62 @@ h1 {
   padding: 1.5em;
 }
 
-.col-lg-4 {
+/* .col-lg-4 {
   width: 33.33%;
+  float: left;
+} */
+
+.col-lg-6 {
+  width: 50%;
   float: left;
 }
 
-#left-crest {
-  /* border: 5px outset #fcec5a; */
+/* #left-crest {
+  border: 5px outset #fcec5a;
   display: flex;
   flex-direction: column;
   padding: 1em;
   align-items: center;
   justify-content: center;
-}
+} */
 
 h2 {
   font-size: 2.5em;
+  /* font-family: 'LUMOS'; */
+  /* Fallback: sans-serif; */
 }
+
+/* img {
+  width: 50%;
+} */
 
 img {
   width: 80%;
+  margin: 1em;
 }
 
-#middle {
-  /* border: 5px outset #fcec5a; */
+#left {
+  border: 5px outset #fcec5a;
+  /* display: block; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   /* margin: 1em auto; */
-  padding: 1em;
+  padding: 2em;
   /* height: 60vh; */
 }
 
-#mid-top {
+#left-top {
+  /* display: flex; */
+  display: block;
+  float: left;
+  /* align-items: center; */
+  /* justify-content: flex-end; */
   color: #fcec5a;
   /* color: #a3a7a1; */
   /* color: #666666; */
+  padding: 1em;
 }
 
 .big {
@@ -106,7 +130,7 @@ img {
 }
 
 .btn {
-  font-family: 'LumosLatino';
+  font-family: 'MyLumos';
   Fallback: sans-serif;
   /* color: #a3a7a1; */
   margin: 0 auto 3em auto;
@@ -114,10 +138,15 @@ img {
 
 #accio-button {
   border: 3px solid #fcec5a;
+  margin: 1em;
 }
 #accio-button:hover {
-  background: #fcec5a;
-  border: 3px solid #ffffff;
+  /* background: #fcec5a; */
+  border: 3px solid #a3a7a1;
+  /* border: 3px solid #de9f3b; */
+  /* color: #a3a7a1; */
+  /* color: #fcec5a; */
+  color: #de9f3b;
 }
 
 #sorting-button {
@@ -126,12 +155,16 @@ img {
 }
 
 #sorting-button:hover {
-  background-color: #ffffff;
-  border: 3px solid #fcec5a;
+  background-color: #fcec5a;
+  /* border: 3px solid #a3a7a1; */
+  border: 3px solid #de9f3b;
+  /* border: 3px solid #ab6d2b; */
+  color: #de9f3b;
+  /* color: #a3a7a1 */
 }
 
-#right-text {
-  /* border: 5px outset #fcec5a; */
+#right {
+  border: 5px outset #fcec5a;
   display: flex;
   flex-direction: column;
   font-family: 'HARRP___';
@@ -148,20 +181,51 @@ img {
   justify-content: center;
 }
 
-#footer {
-  display: block;
-  position: absolute;
-  bottom: 0;
-  padding: 1.5em;
-  text-align: center;
-  margin-top: 1em;
-  width: 100vw;
+#generator {
+  border: 5px outset #fcec5a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'HARRP___';
+  Fallback: sans-serif;
+  font-size: 2em;
+  margin: 2em;
 }
 
-footer > p {
+.your-spell {
+  font-family: 'MyLumos';
+  Fallback: sans-serif;
+  font-size: 1em;
+  color: #fcec5a;
+}
+
+footer {
+  /* border: 5px outset #fcec5a; */
   font-family: Tahoma;
-  color: #000000;
+  text-align: center;
+  /* color: #fcec5a; */
+  /* color: #000000; */
+  color: #ffffff;
   /* color: #a3a7a1; */
-  margin-top: 1em;
-  margin-bottom: 0.5em;
+  width: 100%;
+  padding: 1.5em;
+}
+
+@media (max-width: 800px) {
+  #main {
+    /* display: flex; */
+    flex-direction: column;
+    width: 100vw;
+  }
+  .col-lg-6 {
+    width: 100%;
+    float: left;
+  }
+  img {
+    width: 50%;
+    margin: 1em;
+  }
+  #left-top {
+    flex-direction: column;
+  }
 }

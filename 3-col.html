@@ -30,14 +30,19 @@
     <div class="container-fluid">
 
       <div class="row" id="main">
+        <!-- Left column House Crest -->
+        <div class="col-lg-4" id="left-crest">
+            <h2 class="house-name"></h2>
+            <img src="images/hogwarts_house_crests.png" alt="Hogwarts Houses Crest" class="house-crest">
+            <!-- <img src="https://www.shareicon.net/data/256x256/2015/11/04/151672_home_256x256.png" alt="Hogwarts Houses Crest"> -->
+        </div>
 
-        <!-- Left column with Dropdowns -->
-        <div class="col-lg-6" id="left">
+        <!-- Middle column with Dropdowns -->
+        <div class="col-lg-4" id="middle">
 
-          <div class="row" id="left-top">
-            <!-- dropdown row -->
+          <div class="row" id="mid-top">
             <div class="col-lg-6" id="select-house">
-              <!-- house dropdown -->
+              <!-- dropdown house here -->
               <label for="sort-house">+<span class="big">5 P</span>oints <span class="big">T</span>o...</label>
                 <select class="form-control" name="sort-house" id="sort-house">
                   <option value="">--</option>
@@ -48,7 +53,7 @@
                 </select>
             </div>
             <div class="col-lg-6" id="select-length">
-              <!-- sentence length dropdown -->
+              <!-- dropdowns paragraphs here -->
               <label for="choose-length"><span class="big">C</span>onjure <span class="big">S</span>pell <span class="big">L</span>ength</label>
                 <select class="form-control" name="choose-length" id="choose-length">
                   <option value="">--</option>
@@ -59,13 +64,6 @@
             </div>
           </div>
 
-          <!-- House Crest -->
-          <div class="col-lg-6" id="left-crest">
-              <!-- <h2 class="house-name"></h2> -->
-              <img src="images/hogwarts_house_crests.png" alt="Hogwarts Houses Crest" class="house-crest">
-              <!-- <img src="https://www.shareicon.net/data/256x256/2015/11/04/151672_home_256x256.png" alt="Hogwarts Houses Crest"> -->
-          </div>
-
           <div class="row" id="mid-bottom">
             <button type="button" class="btn" id="accio-button">ACCIO HOUSE IPSUM!</button>
           </div>
@@ -73,7 +71,7 @@
         </div>
 
         <!-- Right column Ipsum Generated -->
-        <div class="col-lg-6" id="right">
+        <div class="col-lg-4" id="right-text">
             <div class="row" id="right-top">
               <p class="ipsum-generated">Welcome to Hogwarts School of Witchcraft and Wizardry. Use the dropdowns to summon a spell and pass your O.W.L.s
               </p>

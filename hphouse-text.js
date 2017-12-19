@@ -1,3 +1,17 @@
+const houseNames = [
+  'Gryffindor',
+  'Hufflepuff',
+  'Ravenclaw',
+  'Slytherin',
+]
+
+const crestImgs = [
+  'images/0.31_Gryffindor_Crest_Transparent.png',
+  'images/0.51_Hufflepuff_Crest_Transparent.png',
+  'images/0.41_Ravenclaw_Crest_Transparent.png',
+  'images/0.61_Slytherin_Crest_Transparent.png',
+]
+
 const gryffindor = [
   'Godric Gryffindor',
   'bravery',
@@ -37,6 +51,7 @@ const hufflepuff = [
   'Newt Scamander',
   'Cedric Diggory',
   'Alohomora',
+  'gillyweed',
 ];
 
 const ravenclaw = [
