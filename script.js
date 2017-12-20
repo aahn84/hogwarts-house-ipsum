@@ -1,4 +1,7 @@
-// $(document).ready(function() {
+// $(document).ready(function(e) {
+  // e.preventDefault();
+  $('#copy-button').hide();
+
   var accioButton = $('#accio-button');
   var sortHouse = $('#sort-house');
   var selectLength = $('#choose-length');
@@ -7,7 +10,7 @@
   var ipsumText = $('.ipsum-generated');
   var sortingText = $('.get-sorted');
   var sortingButton = $('#sorting-button');
-
+  var copyButton = $('#copy-button');
 
 //display house name and crest on change
   sortHouse.change(function() {
@@ -70,9 +73,11 @@
 
     $('.your-spell').text('Your Spell: ')
     $('.your-spell').attr("font-size", "1.5em",)
-    var ipsumText = $('.ipsum-generated');
-    // ipsumText.css({"font-family":"MyLumos", "Fallback":"sans-serif", "font-size":"1em",});
+    // var ipsumText = $('.ipsum-generated');
     ipsumText.text(random_paragraph(wordArray, inputNum));
+    // ipsumText.fadeIn(5000);
+    copyButton.show(5000);
+    copyButton.text("DOUBLING CHARM");
     sortingButton.text('SPIN TIME-TURNER');
   });
 
@@ -87,7 +92,7 @@
     if (sortingButton.text() === "GET SORTED") {
       sortingButton.text("SPIN TIME-TURNER");
       window.scrollTo(0,200);
-      //cycle through house names
+      //cycle through house names and crests
       let count = 0;
       let intervalID = setInterval(function() {
           let randomIndex = Math.floor(Math.random() * 4);
@@ -104,13 +109,12 @@
     }
   });
 
-//randomize words to create sentence
+//select random words to create sentence
   let random_word = function(wordArray) {
-    // console.log('random word', wordArray);
     return wordArray[Math.floor(Math.random() * wordArray.length)];
   }
 
-//create random sentence using random words
+//create random sentence using random_words
   let random_sentence = function(wordArray) {
     let buildSentence = [];
     let randomLength = Math.floor(Math.random() * (11 - 1) + 1);
@@ -118,27 +122,35 @@
     while (buildSentence.length <= randomLength) {
       buildSentence.push(random_word(wordArray));
     }
-      str = buildSentence.join(" ");
-      return str[0].toUpperCase() + str.substring(1) + ".";
+      let sentence = buildSentence.join(" ");
+      return sentence[0].toUpperCase() + sentence.substring(1) + ".";
   }
 
 //create random paragraph using random_sentence
   let random_paragraph = function(wordArray, inputNum) {
-    let paragraph = [];
+    let buildParagraph = [];
 
     for (var i = 1; i <= inputNum; i++) {
-      console.log(i)
-      paragraph.push(random_sentence(wordArray));
-      console.log(paragraph)
+      buildParagraph.push(random_sentence(wordArray));
     }
-    para = paragraph.join(" ");
-    console.log(para)
-    return para;
+
+    let paragraph = buildParagraph.join(" ");
+    return paragraph;
   }
 
+//click listener on copy button
+  copyButton.click(function(event) {
+    event.preventDefault();
 
-
+    let copyText = ipsumText.text();
+    copyText.select();
+    document.execCommand("Copy");
+  });
 
 
 //End DOMContentLoaded
 // });
+
+
+//copy button not copy (.select)
+//fadeIn

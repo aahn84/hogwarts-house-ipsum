@@ -50,8 +50,10 @@ const hufflepuff = [
   'earth',
   'Newt Scamander',
   'Cedric Diggory',
-  'Alohomora',
   'gillyweed',
+  'Stupefy',
+  'Lumos',
+  'Confundo',
 ];
 
 const ravenclaw = [
@@ -72,6 +74,8 @@ const ravenclaw = [
   'Cho Chang',
   'pure-blood',
   'Expecto Patronum',
+  'Expelliarmus',
+  'Alohomora',
 ];
 
 const slytherin = [
@@ -96,4 +100,5 @@ const slytherin = [
   'He Who Must Not Be Named',
   'Crucio',
   'Avada Kedavra',
+  'Nox',
 ];
