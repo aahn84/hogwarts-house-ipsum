@@ -42,7 +42,6 @@
     let inputNum = parseInt(secondInput);
     let wordArray;
 
-
     if (firstInput === '' && secondInput === '') {
       alert('Conjure a spell using the dropdown menus.');
       return;
@@ -69,76 +68,40 @@
       wordArray = slytherin;
     }
 
-    $('.your-spell').text("Your Spell:")
-    ipsumText.css({"font-family":"MyLumos", "Fallback":"sans-serif", "font-size":"1em",});
-    ipsumText.text(random_sentence(inputNum, wordArray));
+    $('.your-spell').text('Your Spell: ')
+    $('.your-spell').attr("font-size", "1.5em",)
+    var ipsumText = $('.ipsum-generated');
+    // ipsumText.css({"font-family":"MyLumos", "Fallback":"sans-serif", "font-size":"1em",});
+    ipsumText.text(random_paragraph(wordArray, inputNum));
     sortingButton.text('SPIN TIME-TURNER');
   });
 
 //append # of Sentences to paragraph
-  sortingButton.click(function() {
+  sortingButton.click(function(e) {
+    e.preventDefault();
+
     if (sortingButton.text() === "SPIN TIME-TURNER") {
       return location.reload();
     }
 
     if (sortingButton.text() === "GET SORTED") {
       sortingButton.text("SPIN TIME-TURNER");
+      window.scrollTo(0,200);
       //cycle through house names
       let count = 0;
-      let intervalId = setInterval(function() {
+      let intervalID = setInterval(function() {
           let randomIndex = Math.floor(Math.random() * 4);
           houseCrest.attr("src", crestImgs[randomIndex]);
           let house = houseNames[randomIndex];
           houseName.text(house);
           sortHouse.val(house.toLowerCase());
           count++;
-          console.log(count, house)
 
           if (count >= 20) {
-            clearInterval(intervalId);
+            clearInterval(intervalID);
           }
       }, 150);
     }
-
-    // setTimeout(function() {
-    //   console.log('hi')
-    //   let count1 = 0;
-    //   let count2 = 0;
-    //   let houses = houseNames;
-    //   let imgs = crestImgs;
-    //   // console.log(houses)
-    //   // console.log(imgs)
-    //
-    //   houseCrest.attr("src", imgs[j]);
-    //   house = houses[i];
-    //   houseName.text(house);
-    //   sortHouse.val(house)
-
-      // for (var i = 0; i < houses.length; i++) {
-      //   while (count1 <= 3) {
-      //     house = houses[i];
-      //     console.log(house)
-      //     houseName.text(house);
-      //     count1++;
-      //   }
-      // }
-      // //cycle through house crests
-      // setTimeout(function() {
-      //   for (var j = 0; j < imgs.length; j++) {
-      //     while (count2 <= 3) {
-      //       img = imgs[j];
-      //       console.log(img)
-      //       houseCrest.attr("src", img);
-      //       count2++;
-      //       }
-      //     }
-      //   });
-      // });
-
-    // randomIndex = Math.floor(Math.random() * (4 - 1));
-    // houseName.text(houses[randomIndex]);
-    // houseCrest.attr("src", imgs[randomIndex]);
-    // return;
   });
 
 //randomize words to create sentence
@@ -148,17 +111,34 @@
   }
 
 //create random sentence using random words
-  let random_sentence = function(inputNum, wordArray) {
+  let random_sentence = function(wordArray) {
     let buildSentence = [];
     let randomLength = Math.floor(Math.random() * (11 - 1) + 1);
 
     while (buildSentence.length <= randomLength) {
       buildSentence.push(random_word(wordArray));
     }
-    firstLetter = buildSentence[0][0];
-    str = buildSentence.join(" ");
-    return (str[0].toUpperCase() + str.substring(1) + ".");
+      str = buildSentence.join(" ");
+      return str[0].toUpperCase() + str.substring(1) + ".";
   }
+
+//create random paragraph using random_sentence
+  let random_paragraph = function(wordArray, inputNum) {
+    let paragraph = [];
+
+    for (var i = 1; i <= inputNum; i++) {
+      console.log(i)
+      paragraph.push(random_sentence(wordArray));
+      console.log(paragraph)
+    }
+    para = paragraph.join(" ");
+    console.log(para)
+    return para;
+  }
+
+
+
+
 
 //End DOMContentLoaded
 // });

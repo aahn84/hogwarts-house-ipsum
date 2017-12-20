@@ -30,10 +30,10 @@ body {
   /* background-image: url('images/minimalistic-harry-potter.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  background-position: center;
   margin-right: auto;
   margin-left: auto;
-  min-width: 100%;
+  min-height: 100vh;
 }
 
 .container-fluid {
@@ -47,7 +47,7 @@ h1 {
   Fallback: sans-serif;
   color: #ffffff;
   font-size: 3.5em;
-  margin: 0.5em;
+  margin-top: 0.5em;
 }
 
 .container-fluid {
@@ -81,8 +81,11 @@ h1 {
   justify-content: center;
 } */
 
-h2 {
-  font-size: 2.5em;
+.house-name {
+  font-size: 3em;
+  /* color: #ffffff; */
+  color: #de9f3b;
+  text-align: center;
   /* font-family: 'LUMOS'; */
   /* Fallback: sans-serif; */
 }
@@ -92,32 +95,40 @@ h2 {
 } */
 
 img {
-  width: 80%;
-  margin: 1em;
+  width: 60%;
+  /* margin: 1em; */
 }
 
 #left {
-  border: 5px outset #fcec5a;
+  /* border: 5px outset #fcec5a; */
   /* display: block; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   /* margin: 1em auto; */
-  padding: 2em;
+  padding: 0 2em;
+  margin: auto;
   /* height: 60vh; */
 }
 
 #left-top {
   /* display: flex; */
   display: block;
-  float: left;
-  /* align-items: center; */
+  /* float: left; */
+  vertical-align: bottom;
   /* justify-content: flex-end; */
   color: #fcec5a;
   /* color: #a3a7a1; */
   /* color: #666666; */
-  padding: 1em;
+  /* padding: 1em; */
+  width: 100%;
+  padding: 2em;
+}
+
+#left-crest {
+  margin: 0;
+  width: 100%;
 }
 
 .big {
@@ -138,7 +149,8 @@ img {
 
 #accio-button {
   border: 3px solid #fcec5a;
-  margin: 1em;
+  margin: 2em;
+  height: 100%;
 }
 #accio-button:hover {
   /* background: #fcec5a; */
@@ -152,6 +164,8 @@ img {
 #sorting-button {
   background-color: #fcec5a;
   border: 3px solid #fcec5a;
+  margin: 2em;
+  height: 100%;
 }
 
 #sorting-button:hover {
@@ -164,13 +178,13 @@ img {
 }
 
 #right {
-  border: 5px outset #fcec5a;
+  /* border: 5px outset #fcec5a; */
   display: flex;
   flex-direction: column;
   font-family: 'HARRP___';
   Fallback: sans-serif;
   font-size: 1.5em;
-  padding: 2em;
+  padding: 3em;
   align-items: center;
   justify-content: center;
 }
@@ -181,22 +195,13 @@ img {
   justify-content: center;
 }
 
-#generator {
-  border: 5px outset #fcec5a;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'HARRP___';
-  Fallback: sans-serif;
-  font-size: 2em;
-  margin: 2em;
-}
-
 .your-spell {
   font-family: 'MyLumos';
   Fallback: sans-serif;
   font-size: 1em;
   color: #fcec5a;
+  width: 100%;
+  margin: 1em;
 }
 
 footer {
@@ -221,11 +226,20 @@ footer {
     width: 100%;
     float: left;
   }
+  .house-name {
+    font-size: 2.5em;
+  }
   img {
-    width: 50%;
+    width: 60%;
     margin: 1em;
   }
   #left-top {
     flex-direction: column;
+  }
+  #accio-button {
+    margin: 1em;
+  }
+  #sorting-button {
+    margin: 1em;
   }
 }
