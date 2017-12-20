@@ -1,5 +1,7 @@
 $(document).ready(function() {
   $('#copy-button').hide();
+  $('[data-toggle="tooltip"]').tooltip({ trigger: "hover" });
+
 
   var accioButton = $('#accio-button');
   var sortHouse = $('#sort-house');
@@ -21,10 +23,10 @@ $(document).ready(function() {
     }
   }
 
-
   if (sortHouse.val() !== '') {
     setDefault();
   }
+
 
 //display house name and crest on change
   sortHouse.change(function() {
@@ -106,6 +108,23 @@ $(document).ready(function() {
     copyButton.show();
     copyButton.text("DOUBLING CHARM");
     sortingButton.text('SPIN TIME-TURNER');
+    // sortingButton.attr('title', 'Reset All')
+    //       .tooltip('fixTitle')
+    //       .tooltip('show');
+  });
+
+
+// change tool tip on sorting button hover
+  sortingButton.hover(function() {
+    if (sortingButton.text() === "GET SORTED") {
+      $('[data-toggle="tooltip"]').tooltip({ trigger: "hover" });
+
+      $(sortingButton).tooltip('hide')
+          .attr('data-original-title', 'Get sorted into a Hogwarts House')
+          .tooltip('show');
+    }
+    $('[data-toggle="tooltip"]').tooltip({ trigger: "hover" });
+    return;
   });
 
 //get sorted into a house
@@ -115,13 +134,15 @@ $(document).ready(function() {
     if (sortingButton.text() === "SPIN TIME-TURNER") {
       localStorage.clear();
       location.reload();
-      // selectLength.val('');
       window.scrollTo(0,0);
       return;
     }
 
     if (sortingButton.text() === "GET SORTED") {
       sortingButton.text("SPIN TIME-TURNER");
+      $(sortingButton).tooltip('hide')
+          .attr('data-original-title', 'Reset all')
+          .tooltip('show');
       window.scrollTo(0,200);
 
       //cycle through house names and crests

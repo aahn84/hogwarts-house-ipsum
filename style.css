@@ -107,16 +107,6 @@ img {
   margin: 0 auto 3em auto;
 }
 
-/* #accio-button {
-  border: 3px solid #de9f3b;
-  margin: 2em;
-  height: 100%;
-}
-#accio-button:hover {
-  border: 3px solid #a3a7a1;
-  color: #de9f3b;
-} */
-
 #accio-button {
   /* border: 3px solid #de9f3b;
   background-color: #de9f3b; */
@@ -149,18 +139,6 @@ img {
   color: #de9f3b;
   /* color: #000000; */
 }
-
-/* #copy-button {
-  border: 3px solid #de9f3b;
-  background-color: #de9f3b;
-  color: #a3a7a1
-  margin: 1em 2em 4em 2em;
-}
-
-#copy-button:hover {
-  border: 3px solid #de9f3b;
-  background-color: #ffffff;
-} */
 
 #copy-button {
   border: 3px solid #de9f3b;
