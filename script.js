@@ -14,7 +14,7 @@
 
   const storedHouse = JSON.parse(localStorage.getItem('hogwartsHouse'));
   console.log(storedHouse)
-  sortHouse.val(storedHouse) || "";
+  // sortHouse.val(storedHouse) || "";
   // console.log(sortHouse.val())
 
 
@@ -121,7 +121,7 @@
     }
   });
 
-//select random words to create sentence
+//select random words to create sentences
   let random_word = function(wordArray) {
     return wordArray[Math.floor(Math.random() * wordArray.length)];
   }
@@ -138,7 +138,7 @@
       return sentence[0].toUpperCase() + sentence.substring(1) + ".";
   }
 
-//create random paragraph using random_sentence
+//create random paragraph using random_sentences
   let random_paragraph = function(wordArray, inputNum) {
     let buildParagraph = [];
 
@@ -167,3 +167,4 @@
 //localStorage
 //fadeIn
 //README
+//remote remote

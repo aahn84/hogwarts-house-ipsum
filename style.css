@@ -40,7 +40,8 @@ h1 {
   display: block;
   font-family: 'MyLumos';
   Fallback: sans-serif;
-  color: #ffffff;
+  /* color: #ffffff; */
+  color: #de9f3b;
   font-size: 3.5em;
   margin-top: 0.5em;
 }
@@ -54,7 +55,7 @@ h1 {
 #main {
   display: flex;
   flex-direction: row;
-  padding: 1.5em;
+  /* padding: 1.5em; */
 }
 
 .col-lg-6 {
@@ -86,8 +87,8 @@ img {
 #left-top {
   display: block;
   vertical-align: bottom;
-  color: #fcec5a;
-  /* color: #de9f3b; */
+  /* color: #fcec5a; */
+  color: #de9f3b;
   width: 100%;
   padding: 2em;
 }
@@ -113,8 +114,8 @@ img {
 }
 
 #accio-button {
-  /* border: 3px solid #de9f3b; */
-  border: 3px solid #fcec5a;
+  border: 3px solid #de9f3b;
+  /* border: 3px solid #fcec5a; */
   margin: 2em;
   height: 100%;
 }
@@ -126,9 +127,12 @@ img {
 
 #sorting-button {
   /* border: 3px solid #fcec5a; */
-  border: 3px solid #de9f3b;
-  background-color: #fcec5a;
+  /* border: 3px solid #de9f3b; */
+  border: 3px solid #a3a7a1;
+  /* background-color: #fcec5a; */
   /* background-color: #de9f3b; */
+  color: #de9f3b;
+  /* color: #a3a7a1; */
   margin: 2em;
   height: 100%;
 }
@@ -144,9 +148,9 @@ img {
 
 #copy-button {
   /* border: 3px solid #fcec5a; */
-  border: 3px solid #a3a7a1;
-  background-color: #fcec5a;
-  /* background-color: #a3a7a1; */
+  border: 3px solid #de9f3b;
+  /* background-color: #fcec5a; */
+  background-color: #de9f3b;
   color: #a3a7a1
   margin: 1em 2em 4em 2em;
   /* height: 100%; */
@@ -154,10 +158,10 @@ img {
 
 #copy-button:hover {
   /* border: 3px solid #fcec5a; */
-  /* border: 3px solid #de9f3b; */
-  border: 3px solid #a3a7a1;
-  background-color: #fcec5a;
-  color: #a3a7a1;
+  border: 3px solid #de9f3b;
+  /* border: 3px solid #a3a7a1; */
+  background-color: #ffffff;
+  /* color: #a3a7a1; */
   /* color: #a3a7a1 */
 }
 
@@ -182,7 +186,8 @@ img {
   font-family: 'MyLumos';
   Fallback: sans-serif;
   font-size: 1em;
-  color: #fcec5a;
+  /* color: #fcec5a; */
+  color: #de9f3b;
   width: 100%;
   margin: 1em;
 }
@@ -204,6 +209,7 @@ footer {
   /* color: #a3a7a1; */
   width: 100%;
   padding: 1.5em;
+  margin-bottom: 0;
 }
 
 
