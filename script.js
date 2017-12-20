@@ -12,6 +12,12 @@
   var sortingButton = $('#sorting-button');
   var copyButton = $('#copy-button');
 
+  const storedHouse = JSON.parse(localStorage.getItem('hogwartsHouse'));
+  console.log(storedHouse)
+  sortHouse.val(storedHouse) || "";
+  // console.log(sortHouse.val())
+
+
 //display house name and crest on change
   sortHouse.change(function() {
   let firstInput = sortHouse.val();
@@ -36,6 +42,8 @@
       houseName.text('Slytherin');
       houseCrest.attr("src", 'images/0.61_Slytherin_Crest_Transparent.png');
     }
+    //set localStorage manual
+    localStorage.setItem('hogwartsHouse', JSON.stringify(firstInput));
   });
 
 //display selections from the two dropdowns
@@ -86,6 +94,7 @@
     e.preventDefault();
 
     if (sortingButton.text() === "SPIN TIME-TURNER") {
+      localStorage.clear();
       return location.reload();
     }
 
@@ -101,6 +110,9 @@
           houseName.text(house);
           sortHouse.val(house.toLowerCase());
           count++;
+
+          //set localStorage sorting hat
+          localStorage.setItem('hogwartsHouse', JSON.stringify(house));
 
           if (count >= 20) {
             clearInterval(intervalID);
@@ -147,10 +159,11 @@
     document.execCommand("Copy");
   });
 
-
 //End DOMContentLoaded
 // });
 
 
 //copy button not copy (.select)
+//localStorage
 //fadeIn
+//README

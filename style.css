@@ -187,6 +187,10 @@ img {
   margin: 1em;
 }
 
+.ipsum-generated {
+  width: 100%;
+}
+
 #right-mid {
   width: 100%;
 }
