@@ -72,7 +72,6 @@ $(document).ready(function() {
 
 //display selections from the two dropdowns
   accioButton.click(function() {
-    window.scrollTo(0,600);
     let firstInput = sortHouse.val();
     let secondInput = selectLength.val();
     let inputNum = parseInt(secondInput);
@@ -87,50 +86,37 @@ $(document).ready(function() {
       return;
     }
 
-
     if (firstInput === 'gryffindor') {
       wordArray = gryffindor;
+      window.scrollTo(0,600);
     }
     if (firstInput === 'hufflepuff') {
       wordArray = hufflepuff;
+      window.scrollTo(0,600);
     }
     if (firstInput === 'ravenclaw') {
       wordArray = ravenclaw;
+      window.scrollTo(0,600);
     }
     if (firstInput === 'slytherin') {
       wordArray = slytherin;
+      window.scrollTo(0,600);
     }
 
     $('.your-spell').text('Your Spell: ')
     $('.your-spell').attr("font-size", "1.5em",)
-    // var ipsumText = $('.ipsum-generated');
     ipsumText.text(random_paragraph(wordArray, inputNum));
     copyButton.show();
     copyButton.text("DOUBLING CHARM");
     sortingButton.text('SPIN TIME-TURNER');
-    // sortingButton.attr('title', 'Reset All')
-    //       .tooltip('fixTitle')
-    //       .tooltip('show');
-  });
-
-
-// change tool tip on sorting button hover
-  sortingButton.hover(function() {
-    if (sortingButton.text() === "GET SORTED") {
-      $('[data-toggle="tooltip"]').tooltip({ trigger: "hover" });
-
-      $(sortingButton).tooltip('hide')
-          .attr('data-original-title', 'Get sorted into a Hogwarts House')
-          .tooltip('show');
-    }
-    $('[data-toggle="tooltip"]').tooltip({ trigger: "hover" });
-    return;
+    $(sortingButton).tooltip('hide')
+            .attr('data-original-title', 'Reset all')
+            // .tooltip('fixTitle')
+            // .tooltip('show');
   });
 
 //get sorted into a house
   sortingButton.click(function() {
-    // e.preventDefault();
-
     if (sortingButton.text() === "SPIN TIME-TURNER") {
       localStorage.clear();
       location.reload();
@@ -140,9 +126,11 @@ $(document).ready(function() {
 
     if (sortingButton.text() === "GET SORTED") {
       sortingButton.text("SPIN TIME-TURNER");
+
       $(sortingButton).tooltip('hide')
-          .attr('data-original-title', 'Reset all')
-          .tooltip('show');
+              .attr('data-original-title', 'Reset All')
+              // .tooltip('fixTitle')
+              .tooltip('show');
       window.scrollTo(0,200);
 
       //cycle through house names and crests
@@ -198,6 +186,10 @@ $(document).ready(function() {
     let paragraph = buildParagraph.join(" ");
     return paragraph;
   }
+//scroll to
+function jump(x, y) {
+  window.scrollTo(x, y);
+}
 
 //click listener on copy button
   copyButton.click(function(element) {
