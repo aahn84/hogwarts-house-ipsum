@@ -1,5 +1,4 @@
-// $(document).ready(function(e) {
-  // e.preventDefault();
+$(document).ready(function() {
   $('#copy-button').hide();
 
   var accioButton = $('#accio-button');
@@ -13,41 +12,65 @@
   var copyButton = $('#copy-button');
 
   const storedHouse = JSON.parse(localStorage.getItem('hogwartsHouse'));
-  console.log(storedHouse)
-  // sortHouse.val(storedHouse) || "";
-  // console.log(sortHouse.val())
 
+  //set default length
+  var setDefault = function() {
+    if (selectLength.val() === '') {
+      selectLength.val('1');
+      return;
+    }
+  }
+
+
+  if (sortHouse.val() !== '') {
+    setDefault();
+  }
 
 //display house name and crest on change
   sortHouse.change(function() {
   let firstInput = sortHouse.val();
+  let secondInput = selectLength.val();
 
     if (firstInput === '') {
+      selectLength.val('');
       houseName.text('');
       houseCrest.attr({"src":'images/hogwarts_house_crests.png', "alt":"Hogwarts Houses Crest", "class":"house-crest"});
     }
     if (firstInput === 'gryffindor') {
       houseName.text('Gryffindor');
       houseCrest.attr("src", 'images/0.31_Gryffindor_Crest_Transparent.png');
+      setDefault();
     }
     if (firstInput === 'hufflepuff') {
       houseName.text('Hufflepuff');
       houseCrest.attr("src", 'images/0.51_Hufflepuff_Crest_Transparent.png');
+      setDefault();
     }
     if (firstInput === 'ravenclaw') {
       houseName.text('Ravenclaw');
       houseCrest.attr("src", 'images/0.41_Ravenclaw_Crest_Transparent.png');
+      setDefault();
     }
     if (firstInput === 'slytherin') {
       houseName.text('Slytherin');
       houseCrest.attr("src", 'images/0.61_Slytherin_Crest_Transparent.png');
+      setDefault();
     }
+
     //set localStorage manual
     localStorage.setItem('hogwartsHouse', JSON.stringify(firstInput));
   });
+  sortHouse.val(storedHouse);
+
+  if (sortHouse.val() !== '' && selectLength.val() === '') {
+    selectLength.val('1');
+  }
+
+  sortHouse.trigger('change');
 
 //display selections from the two dropdowns
   accioButton.click(function() {
+    window.scrollTo(0,600);
     let firstInput = sortHouse.val();
     let secondInput = selectLength.val();
     let inputNum = parseInt(secondInput);
@@ -58,13 +81,10 @@
       return;
     }
     if (firstInput === '' && secondInput !=='') {
-      alert('Sort into a Hogwarts House to summon your spell.')
+      alert('Sort into a Hogwarts House to summon your spell.');
       return;
     }
-    if (firstInput !== '' && secondInput === '') {
-      alert('Conjure a length to summon your spell.')
-      return;
-    }
+
 
     if (firstInput === 'gryffindor') {
       wordArray = gryffindor;
@@ -83,24 +103,27 @@
     $('.your-spell').attr("font-size", "1.5em",)
     // var ipsumText = $('.ipsum-generated');
     ipsumText.text(random_paragraph(wordArray, inputNum));
-    // ipsumText.fadeIn(5000);
-    copyButton.show(5000);
+    copyButton.show();
     copyButton.text("DOUBLING CHARM");
     sortingButton.text('SPIN TIME-TURNER');
   });
 
-//append # of Sentences to paragraph
-  sortingButton.click(function(e) {
-    e.preventDefault();
+//get sorted into a house
+  sortingButton.click(function() {
+    // e.preventDefault();
 
     if (sortingButton.text() === "SPIN TIME-TURNER") {
       localStorage.clear();
-      return location.reload();
+      location.reload();
+      // selectLength.val('');
+      window.scrollTo(0,0);
+      return;
     }
 
     if (sortingButton.text() === "GET SORTED") {
       sortingButton.text("SPIN TIME-TURNER");
       window.scrollTo(0,200);
+
       //cycle through house names and crests
       let count = 0;
       let intervalID = setInterval(function() {
@@ -112,12 +135,17 @@
           count++;
 
           //set localStorage sorting hat
-          localStorage.setItem('hogwartsHouse', JSON.stringify(house));
+          localStorage.setItem('hogwartsHouse', JSON.stringify(house.toLowerCase()));
 
           if (count >= 20) {
             clearInterval(intervalID);
           }
       }, 150);
+
+      if (selectLength.val() === '') {
+        selectLength.val('1');
+      }
+
     }
   });
 
@@ -151,20 +179,18 @@
   }
 
 //click listener on copy button
-  copyButton.click(function(event) {
-    event.preventDefault();
+  copyButton.click(function(element) {
+    let copyText = ipsumText.html();
 
-    let copyText = ipsumText.text();
-    copyText.select();
+    let tempInput = document.createElement('input');
+
+    tempInput.setAttribute('value', copyText);
+    document.body.appendChild(tempInput);
+    tempInput.select();
     document.execCommand("Copy");
+    document.body.removeChild(tempInput);
   });
 
+
 //End DOMContentLoaded
-// });
-
-
-//copy button not copy (.select)
-//localStorage
-//fadeIn
-//README
-//remote remote
+});
