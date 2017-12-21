@@ -21,8 +21,6 @@ body {
   text-align: center;
   cursor: url('images/lightning-icon.png'), auto;
   background-image: url('images/hogwarts wallpaper.jpg');
-  /* background-image: url('http://wallpaper.pickywallpapers.com/2560x1440/minimalistic-harry-potter.jpg'); */
-  /* background-image: url('images/minimalistic-harry-potter.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -108,24 +106,16 @@ img {
 }
 
 #accio-button {
-  /* border: 3px solid #de9f3b;
-  background-color: #de9f3b; */
   border: 3px solid #de9f3b;
   background-color: #ffffff;
-  /* background-color: #de9f3b; */
-  /* color: #a3a7a1 */
   height: 100%;
   margin: 2em;
 }
 
 #accio-button:hover {
-  /* border: 3px solid #de9f3b; */
-  /* background-color: #ffffff; */
   border: 3px solid #de9f3b;
   background-color: #de9f3b;
-  /* color: #a3a7a1 */
 }
-
 
 #sorting-button {
   border: 3px solid #a3a7a1;
@@ -137,13 +127,10 @@ img {
 #sorting-button:hover {
   border: 3px solid #de9f3b;
   color: #de9f3b;
-  /* color: #000000; */
 }
 
 #copy-button {
   border: 3px solid #de9f3b;
-  /* background-color: #de9f3b; */
-  /* color: #a3a7a1 */
   margin: 1em 2em 4em 2em;
 }
 
@@ -193,7 +180,6 @@ footer {
   color: #ffffff;
   width: 100%;
   padding: 1.5em;
-  /* position: absolute; */
   bottom: 0;
 }
 

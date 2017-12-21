@@ -2,7 +2,6 @@ $(document).ready(function() {
   $('#copy-button').hide();
   $('[data-toggle="tooltip"]').tooltip({ trigger: "hover" });
 
-
   var accioButton = $('#accio-button');
   var sortHouse = $('#sort-house');
   var selectLength = $('#choose-length');
@@ -15,7 +14,7 @@ $(document).ready(function() {
 
   const storedHouse = JSON.parse(localStorage.getItem('hogwartsHouse'));
 
-  //set default length
+//set default length when house selected
   var setDefault = function() {
     if (selectLength.val() === '') {
       selectLength.val('1');
@@ -26,7 +25,6 @@ $(document).ready(function() {
   if (sortHouse.val() !== '') {
     setDefault();
   }
-
 
 //display house name and crest on change
   sortHouse.change(function() {
@@ -59,7 +57,7 @@ $(document).ready(function() {
       setDefault();
     }
 
-    //set localStorage manual
+    //set localStorage
     localStorage.setItem('hogwartsHouse', JSON.stringify(firstInput));
   });
   sortHouse.val(storedHouse);
@@ -115,7 +113,7 @@ $(document).ready(function() {
             // .tooltip('show');
   });
 
-//get sorted into a house
+//sorting hat - get sorted into a house
   sortingButton.click(function() {
     if (sortingButton.text() === "SPIN TIME-TURNER") {
       localStorage.clear();
@@ -186,15 +184,10 @@ $(document).ready(function() {
     let paragraph = buildParagraph.join(" ");
     return paragraph;
   }
-//scroll to
-function jump(x, y) {
-  window.scrollTo(x, y);
-}
 
 //click listener on copy button
   copyButton.click(function(element) {
     let copyText = ipsumText.html();
-
     let tempInput = document.createElement('input');
 
     tempInput.setAttribute('value', copyText);
@@ -203,7 +196,6 @@ function jump(x, y) {
     document.execCommand("Copy");
     document.body.removeChild(tempInput);
   });
-
 
 //End DOMContentLoaded
 });
