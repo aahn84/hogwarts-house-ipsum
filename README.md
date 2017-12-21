@@ -3,7 +3,7 @@ Hogwarts House Ipsum is a simple lorem ipsum generator and Hogwarts House Sortin
 
 ### Live URL: http://hogwartshouseipsum.surge.sh/
 
-<img src="screenshots/mobile-sort.gif" height="500"><img src="screenshots/mobile-time-turner-reset.gif" height="500">
+<img src="screenshots/mobile-sort.gif" height="500">  <img src="screenshots/mobile-time-turner-reset.gif" height="500">
 
 ## Instructions
 1. Select Hogwarts house to set type of ipsum to be generated, or use Sorting Hat feature to randomly select house
