@@ -5,7 +5,7 @@ Hogwarts House Ipsum is a simple lorem ipsum generator and Hogwarts House Sortin
 
 <img src="screenshots/mobile-sort.gif" height="500"><img src="screenshots/mobile-time-turner-reset.gif" height="500">
 
-##Instructions
+## Instructions
 1. Select Hogwarts house to set type of ipsum to be generated, or use Sorting Hat feature to randomly select house
 
 2. Change spell length if longer than 1 Sentence default is desired
@@ -17,7 +17,7 @@ Hogwarts House Ipsum is a simple lorem ipsum generator and Hogwarts House Sortin
 
 5. Click 'SPIN TIME-TURNER' button to reset settings and refresh page
 
-##Technologies
+## Technologies
 - HTML
 - CSS
 - Bootstrap
@@ -27,7 +27,7 @@ Hogwarts House Ipsum is a simple lorem ipsum generator and Hogwarts House Sortin
 - JavaScript
 - jQuery
 
-##Features
+## Features
 - Mobile & web responsive
 - Lightning icon cursor
 - Alerts when one or more inputs not set
@@ -42,7 +42,7 @@ Hogwarts House Ipsum is a simple lorem ipsum generator and Hogwarts House Sortin
 - 'Spin Time-Turner' reset button
 - Saves last-selected house to localStorage
 
-##Screenshots
+## Screenshots
 ### Desktop Screenshot:
 ![Image of Desktop Screenshot](screenshots/desktop-home.png)
 
