@@ -56,10 +56,10 @@ Hogwarts House Ipsum is a simple lorem ipsum generator and Hogwarts House Sortin
 ![Gif of Desktop Time-Turner Reset](screenshots/desktop-time-turner-reset.gif)
 
 ### Mobile Screenshot:
-![Image of Mobile Screenshot]<img src="screenshots/mobile-home.png" height="500">
+<img src="screenshots/mobile-home.png" height="500">
 
 ### Mobile Hogwarts House Ipsum Generated:
-![Image of Mobile Hogwarts House Ipsum Generated]<img src="screenshots/mobile-spell.png" height="500">
+<img src="screenshots/mobile-spell.png" height="500">
 
 ### Mobile Hogwarts Sorting Hat:
 ![Gif of Mobile Hogwarts Sorting Hat](screenshots/mobile-sort.gif)
