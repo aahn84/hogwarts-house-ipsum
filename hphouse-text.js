@@ -30,7 +30,17 @@ const gryffindor = [
   'Harry Potter',
   'Hermione Granger',
   'Sword of Gryffindor',
-  'Wingardium Leviosa',
+  'wingardium leviosa',
+  'apparate',
+  'Auror',
+  'Goblet of Fire',
+  'Sorcerer\'s Stone',
+  'golden snitch',
+  'Marauder\'s Map',
+  'parselmouth',
+  'parseltongue',
+  'Rubeus Hagrid',
+  'James and Lily',
 ];
 
 const hufflepuff = [
@@ -51,9 +61,13 @@ const hufflepuff = [
   'Newt Scamander',
   'Cedric Diggory',
   'gillyweed',
-  'Stupefy',
-  'Lumos',
-  'Confundo',
+  'stupefy',
+  'lumos',
+  'confundo',
+  'mandrake',
+  'The Quibbler',
+  'Whomping Willow',
+  'Nymphadora Tonks',
 ];
 
 const ravenclaw = [
@@ -73,9 +87,12 @@ const ravenclaw = [
   'Luna Lovegood',
   'Cho Chang',
   'pure-blood',
-  'Expecto Patronum',
-  'Expelliarmus',
-  'Alohomora',
+  'expecto patronum',
+  'expelliarmus',
+  'alohomora',
+  'quidditch',
+  'merpeople',
+  'Ollivander',
 ];
 
 const slytherin = [
@@ -98,7 +115,13 @@ const slytherin = [
   'Tom Riddle',
   'Voldemort',
   'He Who Must Not Be Named',
-  'Crucio',
-  'Avada Kedavra',
-  'Nox',
+  'crucio',
+  'avada kedavra',
+  'nox',
+  'Azkaban',
+  'Basilisk',
+  'The Dark Mark',
+  'Death Eater',
+  'Dementor',
+  'Dolores Umbridge',
 ];
