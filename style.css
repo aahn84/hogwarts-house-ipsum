@@ -79,12 +79,21 @@ img {
 }
 
 #left-top {
+  display: flex;
+  /* vertical-align: bottom; */
+  align-items:  baseline;
+  color: #de9f3b;
+  width: 100%;
+  padding: 2em;
+}
+
+/* #left-top {
   display: block;
   vertical-align: bottom;
   color: #de9f3b;
   width: 100%;
   padding: 2em;
-}
+} */
 
 #left-crest {
   margin: 0;
@@ -174,6 +183,7 @@ footer {
   font-family: Tahoma;
   text-align: center;
   color: #ffffff;
+  /* color: #de9f3b; */
   width: 100%;
   padding: 1.5em;
   bottom: 0;
