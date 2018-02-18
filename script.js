@@ -186,16 +186,21 @@ $(document).ready(function() {
   }
 
 //click listener on copy button
-  copyButton.click(function(element) {
-    let copyText = ipsumText.html();
-    let tempInput = document.createElement('input');
+  // copyButton.click();
+  copyButton.on('click', copyText);
+  copyButton.on('tap', copyText);
 
-    tempInput.setAttribute('value', copyText);
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    document.execCommand("Copy");
-    document.body.removeChild(tempInput);
-  });
+
+function copyText(element) {
+  let copyText = ipsumText.html();
+  let tempInput = document.createElement('input');
+
+  tempInput.setAttribute('value', copyText);
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand("Copy");
+  document.body.removeChild(tempInput);
+}
 
 //End DOMContentLoaded
 });
